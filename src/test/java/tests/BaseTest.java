@@ -14,9 +14,8 @@ public class BaseTest {
 
     @AfterEach
     public void afterTest(){
-        browser.getAssertions().assertAll();
         browser.getDriver().quit();
-
+        browser.getAssertions().assertAll();
     }
 
 

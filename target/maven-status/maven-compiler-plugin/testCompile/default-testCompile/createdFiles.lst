@@ -1,0 +1,6 @@
+tests\BaseTest.class
+tests\FirstExercise.class
+parameterized\ParameterizedTests.class
+parameterized\SecondTestParameter.class
+parameterized\SecondExerciseParameters.class
+tests\SecondExercise.class

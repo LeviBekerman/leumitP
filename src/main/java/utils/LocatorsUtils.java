@@ -1,4 +1,4 @@
-package utils.files.fileReder;
+package utils;
 
 public class LocatorsUtils {
 

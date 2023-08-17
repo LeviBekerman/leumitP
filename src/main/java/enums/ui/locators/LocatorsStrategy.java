@@ -1,7 +1,7 @@
 package enums.ui.locators;
 
 import org.openqa.selenium.By;
-import static utils.files.fileReder.LocatorsUtils.*;
+import static utils.LocatorsUtils.*;
 
 public enum LocatorsStrategy {
     XPATH {

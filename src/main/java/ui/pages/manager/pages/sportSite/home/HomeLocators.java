@@ -7,8 +7,8 @@ import ui.pages.manager.pages.AbstractBasePage;
 
 import static enums.ui.locators.LocatorsStrategy.CLASS_NAME;
 import static enums.ui.locators.LocatorsStrategy.XPATH;
-import static utils.files.fileReder.LocatorsUtils.getXpathByAttributeContains;
-import static utils.files.fileReder.LocatorsUtils.getXpathByAttributeEquals;
+import static utils.LocatorsUtils.getXpathByAttributeContains;
+import static utils.LocatorsUtils.getXpathByAttributeEquals;
 
 public class HomeLocators extends AbstractBasePage {
     protected Button selectLanguageButton = new Button(browser, CLASS_NAME, "current-language");
