@@ -107,7 +107,6 @@ public class Table extends BaseElement {
                 rows.add(new Row(cells));
             }
         }
-        ;
     }
 
     private List<String> getCellValues(BaseElement element, boolean isTitles) {

@@ -8,6 +8,7 @@ import ui.pages.manager.pages.sportSite.home.HomeActions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,7 +30,7 @@ public class SportHomPageWorkflows {
         String localLanguageName = homeActions.getLocalLanguageName(selectLanguageDisplayIndex);
         String url = homeActions.getLanguageUrl(localLanguageName);
         List<Callable<String>> getCodOptions = asList((() -> getCodeByRegex(url)), () -> getCodeBySubString(url), () -> getCodeBySplit(url));
-        int getIndex = selectLanguageDisplayIndex % getCodOptions.size();
+        int getIndex = selectLanguageDisplayIndex > 2 ? new Random().nextInt(3) : selectLanguageDisplayIndex;
         return getCodOptions.get(getIndex).call().toUpperCase();
     }
 
