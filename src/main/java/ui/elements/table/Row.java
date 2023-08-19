@@ -29,6 +29,10 @@ public class Row {
         return rows.stream().filter(row -> row.isEqualsToOneCellTitle(columnName)).findFirst().get();
     }
 
+    public static Row getRowByColumnEquals(String columnName, String columnValue, List<Row> rows) {
+        return rows.stream().filter(row -> row.getValueByColumnName(columnName).equals(columnValue)).findFirst().get();
+    }
+
     public static Row getRowByCellEquals(String columnValue, List<Row> rows) {
         return rows.stream().filter(row -> row.isEqualsToOneCellValue(columnValue)).findFirst().get();
     }

@@ -5,8 +5,8 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class SecondExerciseParameters {
-    int searchColumn;
+public class SecondExerciseParameters <T>{
+    T searchColumn;
     String searchText;
     int returnColumnText;
     String exceptedValue;

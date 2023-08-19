@@ -22,7 +22,7 @@ public class Browser extends DriverConfiguration implements SearchContext {
     }
 
     public void navigateTo(String url) {
-        driver.navigate().to(url);
+        driver.get(url);
     }
 
     @Override

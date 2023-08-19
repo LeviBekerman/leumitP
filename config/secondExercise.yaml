@@ -1,3 +1,7 @@
-first.parameter = 1,Ernst Handel,2,Roland Mendel
-second.parameter = 2,Helen Bennett,3,UK
-third.parameter = 3,Italy,1,Magazzini Alimentari Riuniti1
+first.parameter.by.column.index = 1,Ernst Handel,2,Roland Mendel
+second.parameter.by.column.index = 2,Helen Bennett,3,UK
+third.parameter.by.column.index = 3,Italy,1,Magazzini Alimentari Riuniti1
+
+first.parameter.by.column.name = Company,Ernst Handel,2,Roland Mendel
+second.parameter.by.column.name = Contact,Helen Bennett,3,UK
+third.parameter.by.column.name = Country,Italy,1,Magazzini Alimentari Riuniti1

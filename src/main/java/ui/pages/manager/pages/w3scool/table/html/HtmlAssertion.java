@@ -1,5 +1,6 @@
 package ui.pages.manager.pages.w3scool.table.html;
 
+import io.qameta.allure.Step;
 import lombok.SneakyThrows;
 import ui.driver.Browser;
 import ui.elements.table.Table;
@@ -19,7 +20,20 @@ public class HtmlAssertion extends HtmlTableLocators {
     }
 
     @SneakyThrows
+    @Step("Verify cell value")
     public void verifyTableCellText(Table table, int searchColumn, String searchText, int returnColumnText, String exceptedValue) {
+        softAssertEquals(table.getTableCelText(searchColumn, searchText, returnColumnText), exceptedValue, browser, "Cell value");
+    }
+
+    @SneakyThrows
+    @Step("Verify cell value by xpath")
+    public void verifyTableCellTextByXpath(Table table, int searchColumn, String searchText, int returnColumnText, String exceptedValue) {
+        softAssertEquals(table.getTableCelTextByXpath(searchColumn, searchText, returnColumnText), exceptedValue, browser, "Cell value");
+    }
+
+    @SneakyThrows
+    @Step("Verify cell value")
+    public void verifyTableCellText(Table table, String searchColumn, String searchText, int returnColumnText, String exceptedValue) {
         softAssertEquals(table.getTableCelText(searchColumn, searchText, returnColumnText), exceptedValue, browser, "Cell value");
     }
 }

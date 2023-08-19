@@ -15,7 +15,8 @@ import java.util.function.Supplier;
 import static enums.ui.locators.LocatorsStrategy.TAG_NAME;
 import static enums.ui.locators.LocatorsStrategy.XPATH;
 import static java.util.stream.Collectors.toList;
-import static ui.elements.table.Row.*;
+import static ui.elements.table.Row.getRowBy;
+import static ui.elements.table.Row.getRowByColumnEquals;
 
 public class Table extends BaseElement {
     String CELL_XPATH = "//child::tr[{ROW_NUM}]/td[{CELL_NUM}]";
@@ -45,7 +46,7 @@ public class Table extends BaseElement {
     public String getTableCelText(String searchColumn, String searchText, int returnColumnText) {
         initRows();
         if (searchText != null || searchText.length() > 0) {
-            return getRowByTitle(searchColumn, rows).getCells().get(returnColumnText - 1).getValue();
+            return getRowByColumnEquals(searchColumn, searchText, rows).getCells().get(returnColumnText - 1).getValue();
         } else {
             throw new RuntimeException("searchText parameter Can't by empty or null");
         }
@@ -107,6 +108,7 @@ public class Table extends BaseElement {
                 rows.add(new Row(cells));
             }
         }
+        rowsElement.getAll().get(0).scrollToElement();
     }
 
     private List<String> getCellValues(BaseElement element, boolean isTitles) {

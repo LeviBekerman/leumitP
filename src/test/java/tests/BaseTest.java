@@ -5,15 +5,15 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import ui.driver.Browser;
 
-public class BaseTest {
+public abstract class BaseTest {
     protected  Browser browser;
     @BeforeEach
-    public void beforeTest(){
+    protected void beforeTest(){
         browser = new Browser();
     }
 
     @AfterEach
-    public void afterTest(){
+    protected void afterTest(){
         browser.getDriver().quit();
         browser.getAssertions().assertAll();
     }

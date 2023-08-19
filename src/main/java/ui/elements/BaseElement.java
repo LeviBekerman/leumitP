@@ -2,8 +2,10 @@ package ui.elements;
 
 import enums.ui.locators.LocatorsStrategy;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import ui.driver.Browser;
 
+import javax.swing.*;
 import java.util.function.Supplier;
 
 public class BaseElement {
@@ -72,6 +74,10 @@ public class BaseElement {
         return getElement().getText();
     }
 
+    public void scrollToElement() {
+        browser.executeScript("arguments[0].scrollIntoView()", getElement());
+    }
+
     public String getAttribute(String attribute) {
         return getElement().getAttribute(attribute);
     }
@@ -79,10 +85,5 @@ public class BaseElement {
     public void click() {
         getElement().click();
     }
-
-//    public <T> T performAction(Callable<T> action) {
-//
-//    }
-
 
 }

@@ -14,6 +14,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 @Target(METHOD)
 @ParameterizedTest
-@MethodSource("parameterized.ParameterizedTests#getTableValueParameters")
-public @interface SecondTestParameter {
+@MethodSource("parameterized.ParameterizedTests#getTableValueParametersByColumnIndex")
+public @interface SecondTestParameterByColumnIndex {
 }
