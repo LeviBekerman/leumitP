@@ -1,10 +1,11 @@
 package tests;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import ui.driver.Browser;
-
+@Slf4j
 public abstract class BaseTest {
     protected  Browser browser;
     @BeforeEach

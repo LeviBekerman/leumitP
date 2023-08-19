@@ -10,9 +10,7 @@ public class ParameterizedTests {
 
     protected static List<SecondExerciseParameters> getTableValueParametersByColumnIndex() {
         List<SecondExerciseParameters> secondExerciseParameters = new ArrayList<>();
-//        List<List<String>> properties = asList(FIRST_PARAMETER_BY_COLUMN_INDEX, SECOND_PARAMETER_BY_COLUMN_INDEX, THIRD_PARAMETER_BY_COLUMN_INDEX);
-        List<List<String>> properties = asList( THIRD_PARAMETER_BY_COLUMN_INDEX);
-
+        List<List<String>> properties = asList(FIRST_PARAMETER_BY_COLUMN_INDEX, SECOND_PARAMETER_BY_COLUMN_INDEX, THIRD_PARAMETER_BY_COLUMN_INDEX);
         properties.forEach(values -> secondExerciseParameters.add(new SecondExerciseParameters(Integer.parseInt(values.get(0)), values.get(1), Integer.parseInt(values.get(2)), values.get(3))));
         return secondExerciseParameters;
     }
