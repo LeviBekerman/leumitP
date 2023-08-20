@@ -30,7 +30,6 @@ public class FirstExercise extends BaseTest{
 
                     log.info("Display local language name = '" + localLanguageName + "'");
                     String expectedCode = getExpectedCod(selectLanguageDisplayIndex, browser);
-                    System.out.println(expectedCode);
                     homeActions.selectLanguage(localLanguageName);
                     softAssertionCodeLanguageIsDisplayCorrect(expectedCode, browser);
 
