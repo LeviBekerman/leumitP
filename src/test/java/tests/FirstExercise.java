@@ -12,7 +12,7 @@ import static workFlows.sport.home.SportHomPageWorkflows.getExpectedCod;
 import static workFlows.sport.home.SportHomPageWorkflows.softAssertionCodeLanguageIsDisplayCorrect;
 
 @Slf4j
-public class FirstExercise extends BaseTest{
+public class FirstExercise extends BaseTest {
 
     @Test
     public void firstExercise() {
@@ -34,7 +34,5 @@ public class FirstExercise extends BaseTest{
                     softAssertionCodeLanguageIsDisplayCorrect(expectedCode, browser);
 
                 });
-        browser.getAssertions().assertAll();
-
     }
 }

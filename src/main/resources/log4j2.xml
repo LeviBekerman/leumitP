@@ -1,46 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="OFF">
-
-    <Properties>
-        <Property name="LOG_LOC">logs</Property>
-        <Property name="MAX">5</Property>
-        <Property name="LOG_PATTERN">%d{yyyy.MM.dd HH:mm:ss.SSS} [%p] %c: %m%n
-        </Property>
-    </Properties>
-
+<Configuration status="warn">
     <Appenders>
-        <RollingFile name="FILE" fileName="${LOG_LOC}/main.log"
-                     filePattern="${LOG_LOC}/main.%i.log">
-            <PatternLayout>
-                <Pattern>${LOG_PATTERN}</Pattern>
-            </PatternLayout>
-
-            <Policies>
-                <OnStartupTriggeringPolicy />
-            </Policies>
-
-            <DefaultRolloverStrategy max="${MAX}" />
-        </RollingFile>
-
-        <Console name="STDOUT" target="SYSTEM_OUT" follow="true">
-            <PatternLayout pattern="${LOG_PATTERN}" />
+        <File name="file" fileName="logs/log.txt" >
+            <PatternLayout pattern="[%X{test-uuid}] %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </File>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%X{test-uuid}] %d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
     </Appenders>
-
     <Loggers>
-        <Logger name="com.roytuts" level="debug" />
-
-        <Logger name="org.springframework.web" level="info"
-                additivity="false" />
-
-        <Logger name="file" level="debug" additivity="false">
-            <appender-ref ref="FILE" />
-        </Logger>
-
-        <Root level="warn">
-            <AppenderRef ref="FILE" />
-            <AppenderRef ref="STDOUT" />
+        <Root level="info">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="file"/>
         </Root>
     </Loggers>
-
 </Configuration>
